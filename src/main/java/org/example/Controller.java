@@ -23,7 +23,7 @@ public class Controller {
         if (cantidad <= 0) throw new CantidadInicialMenorOIgualQueCeroException();
         if ((cantidad < MIN_CANTIDAD_TRANSACCION) || (cantidad > MAX_CANTIDAD_TRANSACCION))
             throw new CantidadInIntervaloValidoException();
-        repository.findByEmail(emailOrigen).sumarASaldo(cantidad);
+        repository.ingresarDinero(emailOrigen,cantidad);
     }
 
     public void sacarDinero(String emailDestino, float cantidad)

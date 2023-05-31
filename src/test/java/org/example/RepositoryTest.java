@@ -15,13 +15,10 @@ class RepositoryTest {
         repository = new Repository();
     }
 
-    @Test
-    void findByEmailException() {
-        assertNull(repository.findByEmail("pepe@pepe.com"));
-    }
 
     @Test
     void test1() {
+        assertNull(repository.findByEmail("pepe@pepe.com"));
         assertTrue(repository.add(new Cuenta("pepe@pepe.com", 500)));
         assertEquals(repository.findByEmail("pepe@pepe.com").getSaldo(), 500);
         assertFalse(repository.add(new Cuenta("pepe@pepe.com", 400)));
